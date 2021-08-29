@@ -1,0 +1,56 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.std_logic_arith.all;
+USE ieee.std_logic_unsigned.all;
+
+ENTITY msgHello IS
+ PORT ( Pixel_row: IN std_logic_vector(9 downto 0);
+		   Pixel_col: IN std_logic_vector (9 downto 0);			
+		  enableMsg : IN bit;
+	      Char_address: OUT std_logic_vector (5 downto 0);
+	     	 Font_row: OUT std_logic_vector (2 downto 0);
+		    Font_col: OUT std_logic_vector (2 downto 0)
+	   );
+END msgHello;
+
+ARCHITECTURE xyz OF msgHello IS
+SIGNAL Flag : std_logic :='0';
+BEGIN
+PROCESS (Pixel_Row,Pixel_col)
+BEGIN 
+IF (enableMsg = '1') THEN
+ IF Pixel_Col >= 208 AND Pixel_Col <= 415 AND Pixel_row >= 256 AND Pixel_row <= 271  THEN 
+	Font_row <= Pixel_row(3 downto 1);
+	Font_col <= Pixel_col(3 downto 1);
+
+	IF Pixel_col >= 208 AND Pixel_Col <= 223 THEN
+		Char_address <= CONV_STD_LOGIC_VECTOR (5,6); --Display "E"
+	ELSIF Pixel_col >= 224 AND Pixel_Col <= 239 THEN
+		Char_address <= CONV_STD_LOGIC_VECTOR (5,6); --Display "E"
+	ELSIF Pixel_col >= 240 AND Pixel_Col <= 255 THEN
+		Char_address <= CONV_STD_LOGIC_VECTOR (52,6); --Display "4"
+	ELSIF Pixel_col >= 256 AND Pixel_Col <= 271 THEN
+		Char_address <= CONV_STD_LOGIC_VECTOR (55,6); --Display "7"
+	ELSIF Pixel_col >= 272 AND Pixel_Col <= 287 THEN
+		Char_address <= CONV_STD_LOGIC_VECTOR (53,6); --Display "5"
+	ELSIF Pixel_col >= 288 AND Pixel_Col <= 303 THEN
+		Char_address <= CONV_STD_LOGIC_VECTOR (48,6); --Display "0"
+	ELSIF Pixel_col >= 304 AND Pixel_Col <= 319 THEN
+		Char_address <= CONV_STD_LOGIC_VECTOR (32,6); --Display " "
+	ELSIF Pixel_col >= 320 AND Pixel_Col <= 335 THEN
+		Char_address <= CONV_STD_LOGIC_VECTOR (18,6); --Display "R"
+	ELSIF Pixel_col >= 336 AND Pixel_Col <= 351 THEN
+		Char_address <= CONV_STD_LOGIC_VECTOR (15,6); --Display "0"
+	ELSIF Pixel_col >= 352 AND Pixel_Col <= 367 THEN
+		Char_address <= CONV_STD_LOGIC_VECTOR (3,6); --Display "C"
+	ELSIF Pixel_col >= 368 AND Pixel_Col <= 383 THEN
+		Char_address <= CONV_STD_LOGIC_VECTOR (11,6); --Display "K"
+	ELSIF Pixel_col >= 384 AND Pixel_Col <= 399 THEN
+		Char_address <= CONV_STD_LOGIC_VECTOR (19,6); --Display "R"	
+	ELSIF Pixel_col >= 400 AND Pixel_Col <= 415 THEN
+		Char_address <= CONV_STD_LOGIC_VECTOR (33,6); --Display "!"	
+	END IF;
+ END IF;
+ END IF;
+END PROCESS;
+END;

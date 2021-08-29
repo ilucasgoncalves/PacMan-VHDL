@@ -1,0 +1,29 @@
+library IEEE;
+use  IEEE.STD_LOGIC_1164.all;
+use  IEEE.STD_LOGIC_ARITH.all;
+use  IEEE.STD_LOGIC_UNSIGNED.all;
+
+entity rgb_convert is
+	port( color_bit: in std_logic;
+			red_tenbit:out std_logic_vector(9 downto 0);
+			blue_tenbit:out std_logic_vector(9 downto 0);
+			green_tenbit:out std_logic_vector(9 downto 0));
+	
+end rgb_convert;
+
+architecture ten_bit_colors of rgb_convert is
+	begin
+		process(color_bit)
+			begin
+				if color_bit = '1' then
+					red_tenbit <=   "0100001110";
+					blue_tenbit <=  "0111001110";
+					green_tenbit <= "0111000010";
+				else 
+					red_tenbit <=   "0000000000";
+					blue_tenbit <=  "0000000000";
+					green_tenbit <= "0000000000";
+					
+				end if;
+		end process;
+end ten_bit_colors;
