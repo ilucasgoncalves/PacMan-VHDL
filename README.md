@@ -28,7 +28,7 @@ handling all of the game’s physical design and logic implementation.
 ## GUI Overview
 ### Final Map Design
 <p align="center">
-<img src='imgs/GUI.png' width="500px"/>
+<img src='imgs/GUI.png' width="500px"/> 
 
 
 ### Final Game Design Notes
