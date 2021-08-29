@@ -2,20 +2,23 @@
 
 1. Pac-Man in VHDL Project Description:
 ~~~~
-This is an implementation of a version of the game ‘PAC-MAN’ (We called it PacBoi) using an FPGA with some creative twists to it. The project
-allowed a user to interface with the Altera DE2 board to interact with the game and select either one of
-the displaying game figures as the character of choice. To accomplish this task successfully, multiple
-modules were created as and designed as a block diagram in Quartus II using VHDL syntax.
+This is an implementation of a version of the game ‘PAC-MAN’ (We called it PacBoi) using an FPGA 
+with some creative twists to it. The project allowed a user to interface with the Altera DE2 
+board to interact with the game and select either one of
+the displaying game figures as the character of choice. 
+To accomplish this task successfully, multiple modules were created as and designed 
+as a block diagram in Quartus II using VHDL syntax.
 ~~~~
 
 2. File Contents:
 ~~~~
 Six design blocks including: clkdiv for
-diving the Altera DE2 board clock from 50 MHz to 25 MHz; vgasync for synchronizing the board output
-with the VGA screen; yakuza_conv for interpreting required colors to the VGA screen; clock div for
-dividing the board clock into categories between 1 Hz to 5 KHz; char_rom for reading the memory
-initialization file (MIF) file containing all characters to be used in the game design (see Fig. 1 for examples); and msghello for
-handling all of the game’s physical design and logic implementation.
+diving the Altera DE2 board clock from 50 MHz to 25 MHz; vgasync for synchronizing 
+the board output with the VGA screen; yakuza_conv for interpreting required colors 
+to the VGA screen; clock div for dividing the board clock into categories between 
+1 Hz to 5 KHz; char_rom for reading the memory initialization file (MIF) file 
+containing all characters to be used in the game design (see Fig. 1 for examples); 
+and msghello for handling all of the game’s physical design and logic implementation.
 ~~~~
 
 
