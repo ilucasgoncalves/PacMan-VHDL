@@ -22,13 +22,13 @@ handling all of the game’s physical design and logic implementation.
 
 ### MIF - Example
 <p align="center">
-<img src='imgs/MIF.png' width="1000px"/>
+<img src='imgs/MIF.PNG' />
 
 
 ## GUI Overview
 ### Final Map Design
 <p align="center">
-<img src='imgs/GUI.png' width="500px"/> 
+<img src='imgs/GUI.PNG' /> 
 
 
 ### Final Game Design Notes
